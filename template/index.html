@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="./data.js"></script>
+        <link rel="stylesheet" href="./style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <h1>Team Profile Generator</h1>
+        </header>
+        <main>
+            <aside>
+                <p class="title">co-workers</p>
+                <div class="profiles"></div>
+            </aside>
+            <div class="co-workers_wrapper">
+                <div class="co-worker">
+                    <div class="card">
+                        <div class="front">
+                            <img
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                                alt=""
+                                class="profile-picture"
+                            />
+                            <p class="name">${name}</p>
+                            <p class="profession">${profession}</p>
+                            <div class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab sit atque, velit provident
+                                veniam quam odit
+                            </div>
+                            <a href="#" class="view-profile">View Profile</a>
+                        </div>
+                        <div class="back">
+                            <!-- <img
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                                alt=""
+                                class="profile-picture"
+                            /> -->
+                            <!-- <p class="name">${name}</p>
+                            <p class="profession">${profession}</p>
+                            <div class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab sit atque, velit provident
+                                veniam quam odit
+                            </div> -->
+                            <a href="#">github:</a>
+                            <a href="#" class="view-profile">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script defer>
+            const coworker_wrapper = document.querySelector(".co-workers_wrapper");
+            coworker_wrapper.addEventListener("click", (e) => {
+                if (e.target.matches(".view-profile")) {
+                    const container = e.target.closest(".co-worker");
+                    container.classList.toggle("active");
+                }
+            });
+
+            // profiles.insertAdjacentHTML(
+            //     "beforeend",
+            //     `<div class="manager" href="#">
+            //     <p class="name">${name}</p>
+            //     <div class="details">
+            //         <span>Room ${database.manager.officenumber}</span> • <span>${database.manager.email}</span>
+            //     </div>
+            // </div>`
+            // );
+            // database.employees.forEach(({ name, id, profession, email, githubusername },i) => {
+            //     console.log(i)
+            //     profiles.insertAdjacentHTML(
+            //         "beforeend",
+            //         `<div class="co-worker" href="#">
+            //             <p class="name">${name}</p>
+            //             <div class="details">
+            //                 <span>${profession}</span> • <span>github: ${githubusername}</span>
+            //             </div>
+            //         </div>`
+            //     );
+            //     coworker_wrapper.insertAdjacentHTML(
+            //         "beforeend",
+            //         `<div class="co-worker">
+            //             <img
+            //                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+            //                 alt=""
+            //                 class="profile-picture"
+            //             />
+            //             <p class="name">${name}</p>
+            //             <p class="profession">${profession}</p>
+            //             <div class="description">
+            //                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab sit atque, velit provident veniam
+            //                 quam odit
+            //             </div>
+            //             <a href="#" class="view-profile">View Profile</a>
+            //         </div>`
+            //     );
+            // });
+        </script>
+    </body>
+</html>
